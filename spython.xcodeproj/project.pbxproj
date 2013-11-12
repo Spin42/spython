@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C215A9CAD4C34F2BB0F421A2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC77A03692E14906BE971EC0 /* libPods.a */; };
+		DB1F5E181832DE8B006AACE8 /* SPSkinCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E171832DE8B006AACE8 /* SPSkinCreationViewController.m */; };
+		DB1F5E1B1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E1A1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m */; };
+		DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E1D1832DEEC006AACE8 /* SPSkinInformationViewController.m */; };
 		DB7946E81832D58E000C81F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946E71832D58E000C81F2 /* Foundation.framework */; };
 		DB7946EA1832D58E000C81F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946E91832D58E000C81F2 /* CoreGraphics.framework */; };
 		DB7946EC1832D58E000C81F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946EB1832D58E000C81F2 /* UIKit.framework */; };
@@ -38,6 +41,12 @@
 /* Begin PBXFileReference section */
 		34A4D120AC4141FE9355E682 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		AC77A03692E14906BE971EC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1F5E161832DE8B006AACE8 /* SPSkinCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinCreationViewController.h; sourceTree = "<group>"; };
+		DB1F5E171832DE8B006AACE8 /* SPSkinCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinCreationViewController.m; sourceTree = "<group>"; };
+		DB1F5E191832DEA8006AACE8 /* SPSkinEnrichmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinEnrichmentViewController.h; sourceTree = "<group>"; };
+		DB1F5E1A1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinEnrichmentViewController.m; sourceTree = "<group>"; };
+		DB1F5E1C1832DEEC006AACE8 /* SPSkinInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinInformationViewController.h; sourceTree = "<group>"; };
+		DB1F5E1D1832DEEC006AACE8 /* SPSkinInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinInformationViewController.m; sourceTree = "<group>"; };
 		DB7946E41832D58E000C81F2 /* spython.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spython.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7946E71832D58E000C81F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB7946E91832D58E000C81F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -172,6 +181,12 @@
 				DB7947221832DB3F000C81F2 /* SPHomeViewController.m */,
 				DB7947241832DC02000C81F2 /* SPNavigationController.h */,
 				DB7947251832DC02000C81F2 /* SPNavigationController.m */,
+				DB1F5E161832DE8B006AACE8 /* SPSkinCreationViewController.h */,
+				DB1F5E171832DE8B006AACE8 /* SPSkinCreationViewController.m */,
+				DB1F5E191832DEA8006AACE8 /* SPSkinEnrichmentViewController.h */,
+				DB1F5E1A1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m */,
+				DB1F5E1C1832DEEC006AACE8 /* SPSkinInformationViewController.h */,
+				DB1F5E1D1832DEEC006AACE8 /* SPSkinInformationViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,7 +344,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1F5E1B1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m in Sources */,
+				DB1F5E181832DE8B006AACE8 /* SPSkinCreationViewController.m in Sources */,
 				DB7947231832DB3F000C81F2 /* SPHomeViewController.m in Sources */,
+				DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */,
 				DB7946F41832D58E000C81F2 /* main.m in Sources */,
 				DB7946FE1832D58E000C81F2 /* SPViewController.m in Sources */,
 				DB7947261832DC02000C81F2 /* SPNavigationController.m in Sources */,
