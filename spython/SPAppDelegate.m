@@ -10,9 +10,17 @@
 
 @implementation SPAppDelegate
 
+@synthesize navigationController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
+    [[self window] makeKeyAndVisible];
+    
+    [self setNavigationController:[[SPNavigationController alloc] init]];
+    
+    [[self window] setRootViewController:[self navigationController]];
+    
     return YES;
 }
 							
