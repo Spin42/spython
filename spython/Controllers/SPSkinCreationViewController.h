@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPSkinShootViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface SPSkinCreationViewController : UIViewController
+<UITableViewDelegate,
+UITableViewDataSource,
+UINavigationControllerDelegate,
+UIImagePickerControllerDelegate,
+CLLocationManagerDelegate>
+
+@property (strong, nonatomic) UITableView *skinsTableView;
+@property (strong, nonatomic) NSMutableArray *skins;
+@property (strong, nonatomic) SPSkinShootViewController *skinScanViewController;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end

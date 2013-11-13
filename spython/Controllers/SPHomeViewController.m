@@ -44,12 +44,12 @@
     [[self skinCreationButton] addTarget:self
                                   action:@selector(skinCreationButtonClicked)
                         forControlEvents:UIControlEventTouchUpInside];
-    [[self skinCreationButton] setTitle:@"Add Skin" forState:UIControlStateNormal];
+    [[self skinCreationButton] setTitle:[[self skinCreationViewController] title] forState:UIControlStateNormal];
     [[self view] addSubview:[self skinCreationButton]];
     
     CGRect skinEnrichmentButtonFrame = CGRectMake(0, 100, frame.size.width, 80);
     [self setSkinEnrichmentButton:[[UIButton alloc] initWithFrame:skinEnrichmentButtonFrame]];
-    [[self skinEnrichmentButton] setTitle:@"Enrich Skin" forState:UIControlStateNormal];
+    [[self skinEnrichmentButton] setTitle:[[self skinEnrichmentViewController] title] forState:UIControlStateNormal];
     [[self view] addSubview:[self skinEnrichmentButton]];
     [[self skinEnrichmentButton] addTarget:self
                                   action:@selector(skinEnrichmentButtonClicked)
@@ -57,7 +57,7 @@
     
     CGRect skinInformationButtonFrame = CGRectMake(0, 200, frame.size.width, 80);
     [self setSkinInformationButton:[[UIButton alloc] initWithFrame:skinInformationButtonFrame]];
-    [[self skinInformationButton] setTitle:@"View Skin" forState:UIControlStateNormal];
+    [[self skinInformationButton] setTitle:[[self skinInformationViewController] title] forState:UIControlStateNormal];
 
     [[self view] addSubview:[self skinInformationButton]];
     [[self skinInformationButton] addTarget:self

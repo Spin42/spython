@@ -20,7 +20,7 @@
     if (self) {
         [self setExtendedLayoutIncludesOpaqueBars:YES];
         [self setTitle:@"View Skin"];
-        [[self navigationItem] setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back"
+        [[self navigationItem] setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Home"
                                                                                      style:UIBarButtonItemStylePlain
                                                                                     target:self
                                                                                     action:@selector(handleBack)]];

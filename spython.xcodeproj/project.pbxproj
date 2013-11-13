@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C215A9CAD4C34F2BB0F421A2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC77A03692E14906BE971EC0 /* libPods.a */; };
+		DB026F6C1833F3C10091A12F /* SPSkinShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F6B1833F3C10091A12F /* SPSkinShootViewController.m */; };
+		DB026F6F1833F5680091A12F /* SPHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F6E1833F5680091A12F /* SPHttpClient.m */; };
+		DB026F721833FAB30091A12F /* SPSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F711833FAB30091A12F /* SPSkin.m */; };
+		DB026F751833FF220091A12F /* SPSkinService.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F741833FF220091A12F /* SPSkinService.m */; };
+		DB026F78183403490091A12F /* SPSkinValidationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F77183403490091A12F /* SPSkinValidationViewController.m */; };
 		DB1F5E181832DE8B006AACE8 /* SPSkinCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E171832DE8B006AACE8 /* SPSkinCreationViewController.m */; };
 		DB1F5E1B1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E1A1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m */; };
 		DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E1D1832DEEC006AACE8 /* SPSkinInformationViewController.m */; };
@@ -41,6 +46,16 @@
 /* Begin PBXFileReference section */
 		34A4D120AC4141FE9355E682 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		AC77A03692E14906BE971EC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB026F6A1833F3C10091A12F /* SPSkinShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinShootViewController.h; sourceTree = "<group>"; };
+		DB026F6B1833F3C10091A12F /* SPSkinShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinShootViewController.m; sourceTree = "<group>"; };
+		DB026F6D1833F5680091A12F /* SPHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHttpClient.h; sourceTree = "<group>"; };
+		DB026F6E1833F5680091A12F /* SPHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHttpClient.m; sourceTree = "<group>"; };
+		DB026F701833FAB30091A12F /* SPSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkin.h; sourceTree = "<group>"; };
+		DB026F711833FAB30091A12F /* SPSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkin.m; sourceTree = "<group>"; };
+		DB026F731833FF220091A12F /* SPSkinService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinService.h; sourceTree = "<group>"; };
+		DB026F741833FF220091A12F /* SPSkinService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinService.m; sourceTree = "<group>"; };
+		DB026F76183403490091A12F /* SPSkinValidationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinValidationViewController.h; sourceTree = "<group>"; };
+		DB026F77183403490091A12F /* SPSkinValidationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinValidationViewController.m; sourceTree = "<group>"; };
 		DB1F5E161832DE8B006AACE8 /* SPSkinCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinCreationViewController.h; sourceTree = "<group>"; };
 		DB1F5E171832DE8B006AACE8 /* SPSkinCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinCreationViewController.m; sourceTree = "<group>"; };
 		DB1F5E191832DEA8006AACE8 /* SPSkinEnrichmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinEnrichmentViewController.h; sourceTree = "<group>"; };
@@ -187,6 +202,10 @@
 				DB1F5E1A1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m */,
 				DB1F5E1C1832DEEC006AACE8 /* SPSkinInformationViewController.h */,
 				DB1F5E1D1832DEEC006AACE8 /* SPSkinInformationViewController.m */,
+				DB026F6A1833F3C10091A12F /* SPSkinShootViewController.h */,
+				DB026F6B1833F3C10091A12F /* SPSkinShootViewController.m */,
+				DB026F76183403490091A12F /* SPSkinValidationViewController.h */,
+				DB026F77183403490091A12F /* SPSkinValidationViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,6 +213,8 @@
 		DB79471E1832DAE9000C81F2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				DB026F701833FAB30091A12F /* SPSkin.h */,
+				DB026F711833FAB30091A12F /* SPSkin.m */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -201,6 +222,10 @@
 		DB79471F1832DAE9000C81F2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DB026F6D1833F5680091A12F /* SPHttpClient.h */,
+				DB026F6E1833F5680091A12F /* SPHttpClient.m */,
+				DB026F731833FF220091A12F /* SPSkinService.h */,
+				DB026F741833FF220091A12F /* SPSkinService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -345,13 +370,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB1F5E1B1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m in Sources */,
+				DB026F6F1833F5680091A12F /* SPHttpClient.m in Sources */,
 				DB1F5E181832DE8B006AACE8 /* SPSkinCreationViewController.m in Sources */,
 				DB7947231832DB3F000C81F2 /* SPHomeViewController.m in Sources */,
 				DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */,
 				DB7946F41832D58E000C81F2 /* main.m in Sources */,
+				DB026F78183403490091A12F /* SPSkinValidationViewController.m in Sources */,
+				DB026F6C1833F3C10091A12F /* SPSkinShootViewController.m in Sources */,
+				DB026F751833FF220091A12F /* SPSkinService.m in Sources */,
 				DB7946FE1832D58E000C81F2 /* SPViewController.m in Sources */,
 				DB7947261832DC02000C81F2 /* SPNavigationController.m in Sources */,
 				DB7946F81832D58E000C81F2 /* SPAppDelegate.m in Sources */,
+				DB026F721833FAB30091A12F /* SPSkin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
