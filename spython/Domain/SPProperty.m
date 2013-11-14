@@ -25,7 +25,11 @@
 
 - (id)initWithDictionary:(NSDictionary*)dictionary
 {
-    return nil;
+    self = [self init];
+    if (self) {
+        [self setDate:[NSDate dateWithTimeIntervalSince1970:[[dictionary objectForKey:@"timestamp"] doubleValue]]];
+    }
+    return self;
 }
 
 @end

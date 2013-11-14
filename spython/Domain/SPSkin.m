@@ -17,11 +17,13 @@
 
 @synthesize token;
 @synthesize properties;
+@synthesize links;
 
 + (SPSkin*)initWithDictionary:(NSDictionary*)dictionary
 {
     SPSkin* skin = [[SPSkin alloc] init];
     [skin setToken:[dictionary objectForKey:@"token"]];
+    [skin setLinks:[dictionary objectForKey:@"_links"]];
     [skin initializeProperties:[dictionary objectForKey:@"properties"]];
     
     return skin;
@@ -39,7 +41,7 @@
 
 - (void)initializeProperties:(NSArray*)_properties
 {
-    [self setProperties:[[NSMutableDictionary alloc] init]];
+    [self setProperties:[[NSMutableArray alloc] init]];
     for (NSDictionary *propertyDictionary in _properties) {
         SPProperty *property;
         NSString *type = [propertyDictionary objectForKey:@"type"];
@@ -52,8 +54,16 @@
         else if ([type isEqualToString:@"Number"])
             property = [[SPNumberProperty alloc] initWithDictionary:propertyDictionary];
         
-        [[self properties] setObject:property forKey:[property key]];
+        [[self properties] addObject:property];
     }
 }
 
+- (SPImageProperty*)firstImageProperty
+{
+    for (SPProperty* property in [self properties]) {
+        if ([property isKindOfClass:[SPImageProperty class]])
+            return (SPImageProperty*)property;
+    }
+    return nil;
+}
 @end

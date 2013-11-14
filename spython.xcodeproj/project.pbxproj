@@ -20,6 +20,12 @@
 		DB1F5E181832DE8B006AACE8 /* SPSkinCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E171832DE8B006AACE8 /* SPSkinCreationViewController.m */; };
 		DB1F5E1B1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E1A1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m */; };
 		DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E1D1832DEEC006AACE8 /* SPSkinInformationViewController.m */; };
+		DB35846E1835557D00126E25 /* SPImagePropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB35846D1835557D00126E25 /* SPImagePropertyCell.m */; };
+		DB3584711835585700126E25 /* SPLocationPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3584701835585700126E25 /* SPLocationPropertyCell.m */; };
+		DB3584741835596D00126E25 /* SPNumberPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3584731835596D00126E25 /* SPNumberPropertyCell.m */; };
+		DB3584771835597400126E25 /* SPTextPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3584761835597400126E25 /* SPTextPropertyCell.m */; };
+		DB35847A18355C7D00126E25 /* SPPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB35847918355C7D00126E25 /* SPPropertyCell.m */; };
+		DB35847D1835654E00126E25 /* SPAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB35847C1835654E00126E25 /* SPAnnotation.m */; };
 		DB7946E81832D58E000C81F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946E71832D58E000C81F2 /* Foundation.framework */; };
 		DB7946EA1832D58E000C81F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946E91832D58E000C81F2 /* CoreGraphics.framework */; };
 		DB7946EC1832D58E000C81F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946EB1832D58E000C81F2 /* UIKit.framework */; };
@@ -75,6 +81,18 @@
 		DB1F5E1A1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinEnrichmentViewController.m; sourceTree = "<group>"; };
 		DB1F5E1C1832DEEC006AACE8 /* SPSkinInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinInformationViewController.h; sourceTree = "<group>"; };
 		DB1F5E1D1832DEEC006AACE8 /* SPSkinInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinInformationViewController.m; sourceTree = "<group>"; };
+		DB35846C1835557D00126E25 /* SPImagePropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImagePropertyCell.h; sourceTree = "<group>"; };
+		DB35846D1835557D00126E25 /* SPImagePropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPImagePropertyCell.m; sourceTree = "<group>"; };
+		DB35846F1835585700126E25 /* SPLocationPropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLocationPropertyCell.h; sourceTree = "<group>"; };
+		DB3584701835585700126E25 /* SPLocationPropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLocationPropertyCell.m; sourceTree = "<group>"; };
+		DB3584721835596D00126E25 /* SPNumberPropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNumberPropertyCell.h; sourceTree = "<group>"; };
+		DB3584731835596D00126E25 /* SPNumberPropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNumberPropertyCell.m; sourceTree = "<group>"; };
+		DB3584751835597400126E25 /* SPTextPropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTextPropertyCell.h; sourceTree = "<group>"; };
+		DB3584761835597400126E25 /* SPTextPropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTextPropertyCell.m; sourceTree = "<group>"; };
+		DB35847818355C7D00126E25 /* SPPropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPropertyCell.h; sourceTree = "<group>"; };
+		DB35847918355C7D00126E25 /* SPPropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPropertyCell.m; sourceTree = "<group>"; };
+		DB35847B1835654E00126E25 /* SPAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAnnotation.h; sourceTree = "<group>"; };
+		DB35847C1835654E00126E25 /* SPAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAnnotation.m; sourceTree = "<group>"; };
 		DB7946E41832D58E000C81F2 /* spython.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spython.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7946E71832D58E000C81F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB7946E91832D58E000C81F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -240,6 +258,8 @@
 				DB026F83183433C60091A12F /* SPLocationProperty.m */,
 				DB9C990E18344A1300123C72 /* SPNumberProperty.h */,
 				DB9C990F18344A1300123C72 /* SPNumberProperty.m */,
+				DB35847B1835654E00126E25 /* SPAnnotation.h */,
+				DB35847C1835654E00126E25 /* SPAnnotation.m */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -258,6 +278,16 @@
 		DB7947201832DAE9000C81F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB35846C1835557D00126E25 /* SPImagePropertyCell.h */,
+				DB35846D1835557D00126E25 /* SPImagePropertyCell.m */,
+				DB35846F1835585700126E25 /* SPLocationPropertyCell.h */,
+				DB3584701835585700126E25 /* SPLocationPropertyCell.m */,
+				DB3584721835596D00126E25 /* SPNumberPropertyCell.h */,
+				DB3584731835596D00126E25 /* SPNumberPropertyCell.m */,
+				DB3584751835597400126E25 /* SPTextPropertyCell.h */,
+				DB3584761835597400126E25 /* SPTextPropertyCell.m */,
+				DB35847818355C7D00126E25 /* SPPropertyCell.h */,
+				DB35847918355C7D00126E25 /* SPPropertyCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,23 +425,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9C991018344A1300123C72 /* SPNumberProperty.m in Sources */,
+				DB35847A18355C7D00126E25 /* SPPropertyCell.m in Sources */,
 				DB026F7B183431400091A12F /* SPTextProperty.m in Sources */,
+				DB35846E1835557D00126E25 /* SPImagePropertyCell.m in Sources */,
 				DB1F5E1B1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m in Sources */,
 				DB026F6F1833F5680091A12F /* SPHttpClient.m in Sources */,
 				DB1F5E181832DE8B006AACE8 /* SPSkinCreationViewController.m in Sources */,
+				DB35847D1835654E00126E25 /* SPAnnotation.m in Sources */,
 				DB7947231832DB3F000C81F2 /* SPHomeViewController.m in Sources */,
 				DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */,
 				DB026F84183433C60091A12F /* SPLocationProperty.m in Sources */,
 				DB7946F41832D58E000C81F2 /* main.m in Sources */,
 				DB026F81183432A90091A12F /* SPImageProperty.m in Sources */,
 				DB026F78183403490091A12F /* SPSkinValidationViewController.m in Sources */,
+				DB3584741835596D00126E25 /* SPNumberPropertyCell.m in Sources */,
 				DB026F6C1833F3C10091A12F /* SPSkinShootViewController.m in Sources */,
 				DB026F751833FF220091A12F /* SPSkinService.m in Sources */,
 				DB7946FE1832D58E000C81F2 /* SPViewController.m in Sources */,
 				DB7947261832DC02000C81F2 /* SPNavigationController.m in Sources */,
 				DB7946F81832D58E000C81F2 /* SPAppDelegate.m in Sources */,
 				DB026F7E1834314D0091A12F /* SPProperty.m in Sources */,
+				DB3584771835597400126E25 /* SPTextPropertyCell.m in Sources */,
 				DB026F721833FAB30091A12F /* SPSkin.m in Sources */,
+				DB3584711835585700126E25 /* SPLocationPropertyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,6 @@ static SPSkinService *sharedInstance = nil;
     [[SPHttpClient sharedInstance] POST:@"api/skins"
                              parameters:[[NSDictionary alloc] initWithObjectsAndKeys:parameters, @"skin", nil]
                                 success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"%@", responseObject);
         success(responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);
@@ -42,7 +41,6 @@ static SPSkinService *sharedInstance = nil;
     [[SPHttpClient sharedInstance] GET:@"api/skins"
                             parameters:nil
                                success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"%@", responseObject);
         success(responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);
@@ -54,7 +52,6 @@ static SPSkinService *sharedInstance = nil;
     [[SPHttpClient sharedInstance] GET:url
                             parameters:nil
                                success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"%@", responseObject);
         success([SPSkin initWithDictionary:responseObject]);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);

@@ -15,7 +15,7 @@
     static SPHttpClient *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSURL *serverURL = [NSURL URLWithString:@"http://192.168.0.18:3000"];
+        NSURL *serverURL = [NSURL URLWithString:@"http://spython.herokuapp.com"];
         sharedInstance = [[SPHttpClient alloc] initWithBaseURL:serverURL];
         [sharedInstance setResponseSerializer:[AFJSONResponseSerializer serializer]];
         [sharedInstance setRequestSerializer:[AFJSONRequestSerializer serializer]];

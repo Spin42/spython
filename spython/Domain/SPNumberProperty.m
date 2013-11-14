@@ -31,7 +31,7 @@
 
 - (id)initWithDictionary:(NSDictionary*)dictionary
 {
-    self = [self init];
+    self = [super initWithDictionary:dictionary];
     if (self) {
         [self setKey:[dictionary objectForKey:@"key"]];
         [self setValue:[dictionary objectForKey:@"value"]];

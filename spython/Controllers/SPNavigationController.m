@@ -15,6 +15,8 @@
 @implementation SPNavigationController
 
 @synthesize homeViewController;
+@synthesize activityIndicatorView;
+@synthesize activityIndicatorViewCount;
 
 - (id)init
 {
@@ -23,9 +25,46 @@
         [[self navigationBar] setTranslucent:NO];
         [self setHomeViewController:[[SPHomeViewController alloc] init]];
         [self addChildViewController:[self homeViewController]];
+        [self setActivityIndicatorViewCount:0];
+        [self setActivityIndicatorView:[[UIView alloc] initWithFrame:[[self view] frame]]];
+        
+        [[self activityIndicatorView] setBackgroundColor:[UIColor clearColor]];
+        
+        UIView *activityIndicatorBoxView = [[UIView alloc] initWithFrame:CGRectMake(75,
+                                                                                    ([[self view] frame].size.height / 2) - 40,
+                                                                                    [[self view] frame].size.width - 150,
+                                                                                    80)];
+        [activityIndicatorBoxView setBackgroundColor:[UIColor blackColor]];
+        [activityIndicatorBoxView setAlpha:0.9];
+        [[activityIndicatorBoxView layer] setCornerRadius:5.0];
+        [[self activityIndicatorView] addSubview:activityIndicatorBoxView];
+        
+        UIActivityIndicatorView *activityIndicatorInnerView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [activityIndicatorInnerView setFrame:[[self view] frame]];
+        [activityIndicatorInnerView startAnimating];
+        [[self activityIndicatorView] addSubview:activityIndicatorInnerView];
     }
     return self;
 }
 
+- (void)showActivityIndicator
+{
+    if (![[[self view] subviews] containsObject:[self activityIndicatorView]]){
+        [[self view] addSubview:[self activityIndicatorView]];
+        [self setNavigationBarHidden:YES];
+    }
+    [self setActivityIndicatorViewCount:[self activityIndicatorViewCount] + 1];
+    [[self view] bringSubviewToFront:[self activityIndicatorView]];
+}
+
+- (void)hideActivityIndicator
+{
+    if ([self activityIndicatorViewCount] > 0)
+        [self setActivityIndicatorViewCount:[self activityIndicatorViewCount] - 1];
+    if ([self activityIndicatorViewCount] == 0 && [[[self view] subviews] containsObject:[self activityIndicatorView]]) {
+        [self setNavigationBarHidden:NO];
+        [[self activityIndicatorView] removeFromSuperview];
+    }
+}
 
 @end

@@ -12,5 +12,10 @@
 @interface SPNavigationController : UINavigationController
 
 @property (strong, nonatomic) SPHomeViewController *homeViewController;
+@property (strong, nonatomic) UIView *activityIndicatorView;
+@property (assign, nonatomic) int *activityIndicatorViewCount;
+
+- (void)showActivityIndicator;
+- (void)hideActivityIndicator;
 
 @end

@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSString *key;
 @property (strong, nonatomic) NSString *value;
 @property (strong, nonatomic) NSString *type;
+@property (strong, nonatomic) NSDate *date;
 
 -(NSDictionary*)toDictionary;
 - (id)initWithDictionary:(NSDictionary*)dictionary;

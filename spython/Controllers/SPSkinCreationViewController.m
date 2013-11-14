@@ -10,6 +10,7 @@
 #import "SPSkinService.h"
 #import "SPImageProperty.h"
 #import "SPLocationProperty.h"
+#import "SPNavigationController.h"
 #import "SPSkinCreationViewController.h"
 #import "SPSkinValidationViewController.h"
 #import "SPSkinInformationViewController.h"
@@ -93,10 +94,14 @@
 
 - (void)loadSkins
 {
+    [(SPNavigationController*)[self navigationController] showActivityIndicator];
+
     [[SPSkinService sharedInstance] getAll:^(NSDictionary *skinsResource) {
         [self setSkins:[[NSMutableArray alloc] initWithArray:[[skinsResource objectForKey:@"_links"] objectForKey:@"skins"]]];
         [self reloadTableView];
+        [(SPNavigationController*)[self navigationController] hideActivityIndicator];
     } failed:^(NSError *error) {
+        [(SPNavigationController*)[self navigationController] hideActivityIndicator];
         [[[UIAlertView alloc] initWithTitle:@"Oops"
                                     message:@"The skins can't be loaded, please try later."
                                    delegate:nil
@@ -114,7 +119,9 @@
     [[SPSkinService sharedInstance] create:properties succeeded:^(NSDictionary *resource) {
         NSString *resourceUrl = [[[resource objectForKey:@"_links"] objectForKey:@"self"] objectForKey:@"href"];
         [[self navigationController] pushViewController:[[SPSkinValidationViewController alloc] initWithUrl:resourceUrl] animated:YES];
+        [(SPNavigationController*)[self navigationController] hideActivityIndicator];
     } failed:^(NSError *error) {
+        [(SPNavigationController*)[self navigationController] hideActivityIndicator];
         [[[UIAlertView alloc] initWithTitle:@"Oops"
                                     message:@"The new skin can't be added, please try later."
                                    delegate:nil
@@ -136,6 +143,7 @@
     NSDictionary *skinRessourceDictionary = [[self skins] objectAtIndex:[indexPath row]];
 
     [[cell textLabel] setText:[skinRessourceDictionary objectForKey:@"token"]];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     return cell;
 }
@@ -157,8 +165,16 @@
 
 - (void)imagePickerController: (UIImagePickerController *)pickerConrtoller didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [[self skinScanViewController] dismissViewControllerAnimated:YES completion:nil];
-    [self addSkinForPicture:(UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]];
+    [(SPNavigationController*)[self navigationController] showActivityIndicator];
+
+    [[self skinScanViewController] dismissViewControllerAnimated:YES completion:^{
+        [self addSkinForPicture:(UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]];
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [(SPNavigationController*)[self navigationController] hideActivityIndicator];
 }
 
 - (void)reloadTableView

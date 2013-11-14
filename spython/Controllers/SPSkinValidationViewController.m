@@ -47,9 +47,9 @@
     [[self view] addSubview:[self skinTokenLabel]];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     [[SPSkinService sharedInstance] get:[self url] succeeded:^(SPSkin *skin) {
         [self setCurrentSkin:skin];
         [self updateInformation];
@@ -61,8 +61,8 @@
 - (void)updateInformation
 {
     [[self skinTokenLabel] setText:[[self currentSkin] token]];
-    SPImageProperty *imageProperty = (SPImageProperty*)[[[self currentSkin] properties] objectForKey:@"image"];
-    [[self skinImageView] setImage:[imageProperty decodedValue]];
+    SPImageProperty *firstImageProperty = [[self currentSkin] firstImageProperty];
+    [[self skinImageView] setImage:[firstImageProperty decodedValue]];
 }
 
 
