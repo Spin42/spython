@@ -11,6 +11,7 @@
 
 @interface SPSkinValidationViewController : UIViewController
 
+@property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) SPSkin *currentSkin;
 @property (strong, nonatomic) UIImageView *skinImageView;
 @property (strong, nonatomic) UILabel *skinTokenLabel;

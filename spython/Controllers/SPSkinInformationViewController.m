@@ -7,6 +7,7 @@
 //
 
 #import "SPSkin.h"
+#import "SPSkinService.h"
 #import "SPSkinInformationViewController.h"
 
 @interface SPSkinInformationViewController ()
@@ -15,11 +16,11 @@
 
 @implementation SPSkinInformationViewController
 
-- (id)initWithSkin:(SPSkin*)skin
+- (id)initWithUrl:(NSString*)url;
 {
     self = [super init];
     if (self) {
-
+        [self setUrl:url];
     }
     return self;
 }
@@ -30,5 +31,20 @@
     [[self view] setBackgroundColor:[UIColor purpleColor]];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[SPSkinService sharedInstance] get:[self url] succeeded:^(SPSkin *skin) {
+        [self setCurrentSkin:skin];
+        [self updateInformation];
+    } failed:^(NSError *error) {
+        NSLog(@"Fail to get skin :(");
+    }];
+}
+
+- (void)updateInformation
+{
+    NSLog(@"PLOP %@", [[self currentSkin] token]);
+}
 
 @end

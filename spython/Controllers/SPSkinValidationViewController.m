@@ -24,13 +24,7 @@
 {
     self = [super init];
     if (self) {
-       [[SPSkinService sharedInstance] get:url succeeded:^(SPSkin *skin) {
-           [self setCurrentSkin:skin];
-           [self updateSkin];
-       } failed:^(NSError *error) {
-           NSLog(@"Fail to get skin :(");
-       }];
-        
+        [self setUrl:url];
     }
     return self;
 }
@@ -53,7 +47,18 @@
     [[self view] addSubview:[self skinTokenLabel]];
 }
 
-- (void)updateSkin
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[SPSkinService sharedInstance] get:[self url] succeeded:^(SPSkin *skin) {
+        [self setCurrentSkin:skin];
+        [self updateInformation];
+    } failed:^(NSError *error) {
+        NSLog(@"Fail to get skin :(");
+    }];
+}
+
+- (void)updateInformation
 {
     [[self skinTokenLabel] setText:[[self currentSkin] token]];
     SPImageProperty *imageProperty = (SPImageProperty*)[[[self currentSkin] properties] objectForKey:@"image"];

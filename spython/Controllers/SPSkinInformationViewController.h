@@ -11,6 +11,9 @@
 
 @interface SPSkinInformationViewController : UIViewController
 
-- (id)initWithSkin:(SPSkin*)skin;
+@property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) SPSkin *currentSkin;
+
+- (id)initWithUrl:(NSString*)url;
 
 @end

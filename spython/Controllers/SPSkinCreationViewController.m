@@ -147,9 +147,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SPSkin *skin = [[self skins] objectAtIndex:[indexPath row]];
-    SPSkinInformationViewController *skinInformationViewController = [[SPSkinInformationViewController alloc] initWithSkin:skin];
-    
+    NSDictionary *skinRessourceDictionary = [[self skins] objectAtIndex:[indexPath row]];
+    NSString *href = [skinRessourceDictionary objectForKey:@"href"];
+    SPSkinInformationViewController *skinInformationViewController = [[SPSkinInformationViewController alloc] initWithUrl:href];
     [[self navigationController] pushViewController:skinInformationViewController animated:YES];
 }
 
