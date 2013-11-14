@@ -11,11 +11,10 @@
 
 @interface SPSkin : NSObject
 
-@property (strong, nonatomic) UIImage *picture;
-@property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) NSString *token;
+@property (strong, nonatomic) NSMutableDictionary *properties;
 
 + (SPSkin*)initWithDictionary:(NSDictionary*)dictionary;
-- (NSDictionary*)toDictionary;
++ (NSArray*)initWithArray:(NSArray*)array;
 
 @end

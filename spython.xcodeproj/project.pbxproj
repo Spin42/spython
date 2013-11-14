@@ -13,6 +13,10 @@
 		DB026F721833FAB30091A12F /* SPSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F711833FAB30091A12F /* SPSkin.m */; };
 		DB026F751833FF220091A12F /* SPSkinService.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F741833FF220091A12F /* SPSkinService.m */; };
 		DB026F78183403490091A12F /* SPSkinValidationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F77183403490091A12F /* SPSkinValidationViewController.m */; };
+		DB026F7B183431400091A12F /* SPTextProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F7A183431400091A12F /* SPTextProperty.m */; };
+		DB026F7E1834314D0091A12F /* SPProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F7D1834314D0091A12F /* SPProperty.m */; };
+		DB026F81183432A90091A12F /* SPImageProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F80183432A90091A12F /* SPImageProperty.m */; };
+		DB026F84183433C60091A12F /* SPLocationProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB026F83183433C60091A12F /* SPLocationProperty.m */; };
 		DB1F5E181832DE8B006AACE8 /* SPSkinCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E171832DE8B006AACE8 /* SPSkinCreationViewController.m */; };
 		DB1F5E1B1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E1A1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m */; };
 		DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F5E1D1832DEEC006AACE8 /* SPSkinInformationViewController.m */; };
@@ -31,6 +35,7 @@
 		DB7947131832D58E000C81F2 /* spythonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7947121832D58E000C81F2 /* spythonTests.m */; };
 		DB7947231832DB3F000C81F2 /* SPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7947221832DB3F000C81F2 /* SPHomeViewController.m */; };
 		DB7947261832DC02000C81F2 /* SPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7947251832DC02000C81F2 /* SPNavigationController.m */; };
+		DB9C991018344A1300123C72 /* SPNumberProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9C990F18344A1300123C72 /* SPNumberProperty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,14 @@
 		DB026F741833FF220091A12F /* SPSkinService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinService.m; sourceTree = "<group>"; };
 		DB026F76183403490091A12F /* SPSkinValidationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinValidationViewController.h; sourceTree = "<group>"; };
 		DB026F77183403490091A12F /* SPSkinValidationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinValidationViewController.m; sourceTree = "<group>"; };
+		DB026F79183431400091A12F /* SPTextProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTextProperty.h; sourceTree = "<group>"; };
+		DB026F7A183431400091A12F /* SPTextProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTextProperty.m; sourceTree = "<group>"; };
+		DB026F7C1834314D0091A12F /* SPProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPProperty.h; sourceTree = "<group>"; };
+		DB026F7D1834314D0091A12F /* SPProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPProperty.m; sourceTree = "<group>"; };
+		DB026F7F183432A90091A12F /* SPImageProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImageProperty.h; sourceTree = "<group>"; };
+		DB026F80183432A90091A12F /* SPImageProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPImageProperty.m; sourceTree = "<group>"; };
+		DB026F82183433C60091A12F /* SPLocationProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLocationProperty.h; sourceTree = "<group>"; };
+		DB026F83183433C60091A12F /* SPLocationProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLocationProperty.m; sourceTree = "<group>"; };
 		DB1F5E161832DE8B006AACE8 /* SPSkinCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinCreationViewController.h; sourceTree = "<group>"; };
 		DB1F5E171832DE8B006AACE8 /* SPSkinCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinCreationViewController.m; sourceTree = "<group>"; };
 		DB1F5E191832DEA8006AACE8 /* SPSkinEnrichmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinEnrichmentViewController.h; sourceTree = "<group>"; };
@@ -84,6 +97,8 @@
 		DB7947221832DB3F000C81F2 /* SPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHomeViewController.m; sourceTree = "<group>"; };
 		DB7947241832DC02000C81F2 /* SPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNavigationController.h; sourceTree = "<group>"; };
 		DB7947251832DC02000C81F2 /* SPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationController.m; sourceTree = "<group>"; };
+		DB9C990E18344A1300123C72 /* SPNumberProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNumberProperty.h; sourceTree = "<group>"; };
+		DB9C990F18344A1300123C72 /* SPNumberProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNumberProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +230,16 @@
 			children = (
 				DB026F701833FAB30091A12F /* SPSkin.h */,
 				DB026F711833FAB30091A12F /* SPSkin.m */,
+				DB026F79183431400091A12F /* SPTextProperty.h */,
+				DB026F7A183431400091A12F /* SPTextProperty.m */,
+				DB026F7C1834314D0091A12F /* SPProperty.h */,
+				DB026F7D1834314D0091A12F /* SPProperty.m */,
+				DB026F7F183432A90091A12F /* SPImageProperty.h */,
+				DB026F80183432A90091A12F /* SPImageProperty.m */,
+				DB026F82183433C60091A12F /* SPLocationProperty.h */,
+				DB026F83183433C60091A12F /* SPLocationProperty.m */,
+				DB9C990E18344A1300123C72 /* SPNumberProperty.h */,
+				DB9C990F18344A1300123C72 /* SPNumberProperty.m */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -369,18 +394,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9C991018344A1300123C72 /* SPNumberProperty.m in Sources */,
+				DB026F7B183431400091A12F /* SPTextProperty.m in Sources */,
 				DB1F5E1B1832DEA8006AACE8 /* SPSkinEnrichmentViewController.m in Sources */,
 				DB026F6F1833F5680091A12F /* SPHttpClient.m in Sources */,
 				DB1F5E181832DE8B006AACE8 /* SPSkinCreationViewController.m in Sources */,
 				DB7947231832DB3F000C81F2 /* SPHomeViewController.m in Sources */,
 				DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */,
+				DB026F84183433C60091A12F /* SPLocationProperty.m in Sources */,
 				DB7946F41832D58E000C81F2 /* main.m in Sources */,
+				DB026F81183432A90091A12F /* SPImageProperty.m in Sources */,
 				DB026F78183403490091A12F /* SPSkinValidationViewController.m in Sources */,
 				DB026F6C1833F3C10091A12F /* SPSkinShootViewController.m in Sources */,
 				DB026F751833FF220091A12F /* SPSkinService.m in Sources */,
 				DB7946FE1832D58E000C81F2 /* SPViewController.m in Sources */,
 				DB7947261832DC02000C81F2 /* SPNavigationController.m in Sources */,
 				DB7946F81832D58E000C81F2 /* SPAppDelegate.m in Sources */,
+				DB026F7E1834314D0091A12F /* SPProperty.m in Sources */,
 				DB026F721833FAB30091A12F /* SPSkin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

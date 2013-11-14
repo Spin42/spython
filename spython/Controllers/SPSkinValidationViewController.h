@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) SPSkin *currentSkin;
 @property (strong, nonatomic) UIImageView *skinImageView;
-@property (strong, nonatomic) UITextField *skinTokenTextField;
+@property (strong, nonatomic) UILabel *skinTokenLabel;
+
+- (id)initWithUrl:(NSString*)url;
 
 @end

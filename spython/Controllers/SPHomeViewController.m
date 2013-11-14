@@ -19,7 +19,6 @@
 @synthesize skinInformationButton;
 @synthesize skinCreationViewController;
 @synthesize skinEnrichmentViewController;
-@synthesize skinInformationViewController;
 
 - (id)init
 {
@@ -27,7 +26,6 @@
     if (self) {
         [self setSkinCreationViewController:[[SPSkinCreationViewController alloc] init]];
         [self setSkinEnrichmentViewController:[[SPSkinEnrichmentViewController alloc] init]];
-        [self setSkinInformationViewController:[[SPSkinInformationViewController alloc] init]];
     }
     return self;
 }
@@ -54,15 +52,6 @@
     [[self skinEnrichmentButton] addTarget:self
                                   action:@selector(skinEnrichmentButtonClicked)
                         forControlEvents:UIControlEventTouchUpInside];
-    
-    CGRect skinInformationButtonFrame = CGRectMake(0, 200, frame.size.width, 80);
-    [self setSkinInformationButton:[[UIButton alloc] initWithFrame:skinInformationButtonFrame]];
-    [[self skinInformationButton] setTitle:[[self skinInformationViewController] title] forState:UIControlStateNormal];
-
-    [[self view] addSubview:[self skinInformationButton]];
-    [[self skinInformationButton] addTarget:self
-                                  action:@selector(skinInformationButtonClicked)
-                        forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,12 +68,6 @@
 {
     [[self navigationController] pushViewController:[self skinEnrichmentViewController] animated:YES];
 
-}
-
-- (void)skinInformationButtonClicked
-{
-    [[self navigationController] pushViewController:[self skinInformationViewController] animated:YES];
- 
 }
 
 @end

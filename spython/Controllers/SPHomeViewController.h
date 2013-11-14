@@ -18,6 +18,5 @@
 @property (strong, nonatomic) UIButton *skinInformationButton;
 @property (strong, nonatomic) SPSkinCreationViewController *skinCreationViewController;
 @property (strong, nonatomic) SPSkinEnrichmentViewController *skinEnrichmentViewController;
-@property (strong, nonatomic) SPSkinInformationViewController *skinInformationViewController;
 
 @end

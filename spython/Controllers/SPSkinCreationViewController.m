@@ -8,7 +8,11 @@
 
 #import "SPSkin.h"
 #import "SPSkinService.h"
+#import "SPImageProperty.h"
+#import "SPLocationProperty.h"
 #import "SPSkinCreationViewController.h"
+#import "SPSkinValidationViewController.h"
+#import "SPSkinInformationViewController.h"
 
 @interface SPSkinCreationViewController ()
 
@@ -51,10 +55,10 @@
     return self;
 }
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    [[self view] setBackgroundColor:[UIColor greenColor]];
+    [super viewWillAppear:animated];
+    [self loadSkins];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -87,14 +91,29 @@
         [self presentViewController:[self skinScanViewController] animated:YES completion:nil];
 }
 
+- (void)loadSkins
+{
+    [[SPSkinService sharedInstance] getAll:^(NSDictionary *skinsResource) {
+        [self setSkins:[[NSMutableArray alloc] initWithArray:[[skinsResource objectForKey:@"_links"] objectForKey:@"skins"]]];
+        [self reloadTableView];
+    } failed:^(NSError *error) {
+        [[[UIAlertView alloc] initWithTitle:@"Oops"
+                                    message:@"The skins can't be loaded, please try later."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }];
+}
+
 - (void)addSkinForPicture:(UIImage*)picture
 {
-    SPSkin *skin = [[SPSkin alloc] init];
-    [skin setPicture:picture];
-    [skin setLocation:[[self locationManager] location]];
-    [[SPSkinService sharedInstance] addSkin:skin succeeded:^(SPSkin *skin) {
-        [[self skins] addObject:skin];
-        [self reloadTableView];
+    NSMutableArray *properties = [[NSMutableArray alloc] init];
+    [properties addObject:[[[SPImageProperty alloc] initWithKey:@"image" image:picture] toDictionary]];
+    [properties addObject:[[[SPLocationProperty alloc] initWithKey:@"location" location:[[self locationManager] location]] toDictionary]];
+    
+    [[SPSkinService sharedInstance] create:properties succeeded:^(NSDictionary *resource) {
+        NSString *resourceUrl = [[[resource objectForKey:@"_links"] objectForKey:@"self"] objectForKey:@"href"];
+        [[self navigationController] pushViewController:[[SPSkinValidationViewController alloc] initWithUrl:resourceUrl] animated:YES];
     } failed:^(NSError *error) {
         [[[UIAlertView alloc] initWithTitle:@"Oops"
                                     message:@"The new skin can't be added, please try later."
@@ -114,9 +133,9 @@
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     
-    SPSkin *skin = [[self skins] objectAtIndex:[indexPath row]];
+    NSDictionary *skinRessourceDictionary = [[self skins] objectAtIndex:[indexPath row]];
 
-    [[cell textLabel] setText:[skin token]];
+    [[cell textLabel] setText:[skinRessourceDictionary objectForKey:@"token"]];
     
     return cell;
 }
@@ -124,6 +143,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[self skins] count];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SPSkin *skin = [[self skins] objectAtIndex:[indexPath row]];
+    SPSkinInformationViewController *skinInformationViewController = [[SPSkinInformationViewController alloc] initWithSkin:skin];
+    
+    [[self navigationController] pushViewController:skinInformationViewController animated:YES];
 }
 
 #pragma mark - Camera Protocol

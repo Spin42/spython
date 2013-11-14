@@ -7,23 +7,53 @@
 //
 
 #import "SPSkin.h"
+#import "SPProperty.h"
+#import "SPTextProperty.h"
+#import "SPImageProperty.h"
+#import "SPNumberProperty.h"
+#import "SPLocationProperty.h"
 
 @implementation SPSkin
 
-@synthesize location;
-@synthesize picture;
 @synthesize token;
+@synthesize properties;
 
 + (SPSkin*)initWithDictionary:(NSDictionary*)dictionary
 {
     SPSkin* skin = [[SPSkin alloc] init];
-    // Load from dictionnary
+    [skin setToken:[dictionary objectForKey:@"token"]];
+    [skin initializeProperties:[dictionary objectForKey:@"properties"]];
+    
     return skin;
 }
 
-- (NSDictionary*)toDictionary
++ (NSArray*)initWithArray:(NSArray*)array
 {
-    return [[NSDictionary alloc] initWithObjectsAndKeys:nil];
+    NSMutableArray *skins = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *skinDictionary in array)
+        [skins addObject:[SPSkin initWithDictionary:skinDictionary]];
+    
+    return skins;
+}
+
+- (void)initializeProperties:(NSArray*)_properties
+{
+    [self setProperties:[[NSMutableDictionary alloc] init]];
+    for (NSDictionary *propertyDictionary in _properties) {
+        SPProperty *property;
+        NSString *type = [propertyDictionary objectForKey:@"type"];
+        if ([type isEqualToString:@"Test"])
+            property = [[SPTextProperty alloc] initWithDictionary:propertyDictionary];
+        else if ([type isEqualToString:@"Image"])
+            property = [[SPImageProperty alloc] initWithDictionary:propertyDictionary];
+        else if ([type isEqualToString:@"Location"])
+            property = [[SPLocationProperty alloc] initWithDictionary:propertyDictionary];
+        else if ([type isEqualToString:@"Number"])
+            property = [[SPNumberProperty alloc] initWithDictionary:propertyDictionary];
+        
+        [[self properties] setObject:property forKey:[property key]];
+    }
 }
 
 @end

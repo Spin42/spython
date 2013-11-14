@@ -24,16 +24,41 @@ static SPSkinService *sharedInstance = nil;
     }
 }
 
-- (void)addSkin:(SPSkin*)skin succeeded:(void(^)(SPSkin *skin))success failed: (void (^)(NSError *error))failure {
-//    [[SPHttpClient sharedInstance] POST:@"skins" parameters:[skin toDictionary] success:^(NSURLSessionDataTask *task, id responseObject) {
-//        NSLog(@"%@", responseObject);
-//        success([SPSkin initWithDictionary:responseObject]);
-//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        NSLog(@"%@", error);
-//        failure(error);
-//    }];
-    [skin setToken:@"Mon nouveau token"];
-    success(skin);
+- (void)create:(NSArray*)properties succeeded:(void(^)(NSDictionary *resource))success failed:(void (^)(NSError *error))failure {
+    NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys:properties, @"properties", nil];
+    
+    [[SPHttpClient sharedInstance] POST:@"api/skins"
+                             parameters:[[NSDictionary alloc] initWithObjectsAndKeys:parameters, @"skin", nil]
+                                success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@", error);
+        failure(error);
+    }];
 }
 
+- (void)getAll:(void(^)(NSDictionary *skinsResource))success failed:(void (^)(NSError *error))failure {
+    [[SPHttpClient sharedInstance] GET:@"api/skins"
+                            parameters:nil
+                               success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@", error);
+        failure(error);
+    }];
+}
+
+- (void)get:(NSString*)url succeeded:(void(^)(SPSkin *skin))success failed:(void (^)(NSError *error))failure {
+    [[SPHttpClient sharedInstance] GET:url
+                            parameters:nil
+                               success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
+        success([SPSkin initWithDictionary:responseObject]);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@", error);
+        failure(error);
+    }];
+}
 @end
