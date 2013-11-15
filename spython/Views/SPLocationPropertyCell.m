@@ -15,9 +15,10 @@
 {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"locationCellIdentifier"];
     if (self) {
-        [[self dateLabel] setText:[[locationProperty date] description]];
-        [[self keyLabel] setText:[locationProperty key]];
-        
+        [self setFormattedDate:[locationProperty date]];
+        [self setKey:[locationProperty key]];
+        [self setLogo:[locationProperty logoUrl]];
+
         MKMapView *mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, [[self previewView] frame].size.width, [[self previewView] frame].size.height)];
         SPAnnotation *annotation = [[SPAnnotation alloc] init];
         [annotation setCoordinate:CLLocationCoordinate2DMake([[locationProperty decodedValue] coordinate].latitude,

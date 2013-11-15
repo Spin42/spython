@@ -14,8 +14,17 @@
 {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"textCellIdentifier"];
     if (self) {
-        [[self dateLabel] setText:[[textProperty date] description]];
-        [[self keyLabel] setText:[textProperty key]];
+        [self setFormattedDate:[textProperty date]];
+        [self setKey:[textProperty key]];
+        [self setLogo:[textProperty logoUrl]];
+        
+        UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [[self previewView] frame].size.width, [[self previewView] frame].size.height)];
+        [valueLabel setNumberOfLines:1];
+        [valueLabel setAdjustsFontSizeToFitWidth:YES];
+        [valueLabel setTextColor:[UIColor blackColor]];
+        [valueLabel setTextAlignment:NSTextAlignmentCenter];
+        [valueLabel setText:[[textProperty decodedValue] description]];
+        [[self previewView] addSubview:valueLabel];
     }
     return self;
 }

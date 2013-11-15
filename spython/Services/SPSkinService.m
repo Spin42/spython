@@ -52,6 +52,7 @@ static SPSkinService *sharedInstance = nil;
     [[SPHttpClient sharedInstance] GET:url
                             parameters:nil
                                success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
         success([SPSkin initWithDictionary:responseObject]);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);

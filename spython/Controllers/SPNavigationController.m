@@ -23,8 +23,12 @@
     self = [super init];
     if (self) {
         [[self navigationBar] setTranslucent:NO];
+        [[self navigationBar] setBackgroundImage:[UIImage imageNamed:@"topBarBackground.png"]
+                                   forBarMetrics:UIBarMetricsDefault];
+        [[self navigationBar] setTintColor:[UIColor whiteColor]];
         [self setHomeViewController:[[SPHomeViewController alloc] init]];
-        [self addChildViewController:[self homeViewController]];
+        [self pushViewController:[self homeViewController] animated:NO];
+        
         [self setActivityIndicatorViewCount:0];
         [self setActivityIndicatorView:[[UIView alloc] initWithFrame:[[self view] frame]]];
         
@@ -49,10 +53,8 @@
 
 - (void)showActivityIndicator
 {
-    if (![[[self view] subviews] containsObject:[self activityIndicatorView]]){
+    if (![[[self view] subviews] containsObject:[self activityIndicatorView]])
         [[self view] addSubview:[self activityIndicatorView]];
-        [self setNavigationBarHidden:YES];
-    }
     [self setActivityIndicatorViewCount:[self activityIndicatorViewCount] + 1];
     [[self view] bringSubviewToFront:[self activityIndicatorView]];
 }
@@ -61,10 +63,8 @@
 {
     if ([self activityIndicatorViewCount] > 0)
         [self setActivityIndicatorViewCount:[self activityIndicatorViewCount] - 1];
-    if ([self activityIndicatorViewCount] == 0 && [[[self view] subviews] containsObject:[self activityIndicatorView]]) {
-        [self setNavigationBarHidden:NO];
+    if ([self activityIndicatorViewCount] == 0 && [[[self view] subviews] containsObject:[self activityIndicatorView]])
         [[self activityIndicatorView] removeFromSuperview];
-    }
 }
 
 @end

@@ -7,10 +7,11 @@
 //
 
 #import "SPSkin.h"
+#import "SPSkinService.h"
 #import "SPTextPropertyCell.h"
 #import "SPImagePropertyCell.h"
 #import "SPNumberPropertyCell.h"
-#import "SPSkinService.h"
+#import "SPNavigationController.h"
 #import "SPLocationPropertyCell.h"
 #import "SPSkinInformationViewController.h"
 
@@ -22,16 +23,17 @@
 
 @synthesize currentSkin;
 @synthesize url;
-@synthesize tokenTextField;
 @synthesize lastImageView;
 @synthesize propertiesTableView;
 @synthesize skinEnrichmentViewController;
+@synthesize tokenView;
 
 - (id)initWithUrl:(NSString*)_url;
 {
     self = [super init];
     if (self) {
         [self setUrl:_url];
+        [self setAutomaticallyAdjustsScrollViewInsets:YES];
         [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Enrich"
                                                                                       style:UIBarButtonItemStylePlain
                                                                                      target:self
@@ -43,26 +45,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self view] setBackgroundColor:[UIColor whiteColor]];
     CGRect frame = [[self view] frame];
     
-    [self setTokenTextField:[[UITextField alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 60)]];
-    [[self tokenTextField] setTextAlignment:NSTextAlignmentCenter];
-    [[self tokenTextField] setTextColor:[UIColor grayColor]];
-    [[self view] addSubview:[self tokenTextField]];
-    
-    [self setPropertiesTableView:[[UITableView alloc] initWithFrame:CGRectMake(0, 60, frame.size.width,frame.size.height - 60)]];
+    [self setPropertiesTableView:[[UITableView alloc] initWithFrame:CGRectMake(0,
+                                                                               60,
+                                                                               frame.size.width,
+                                                                               frame.size.height - 70 - [[[self navigationController] navigationBar] frame].size.height)]];
     [[self propertiesTableView] setDelegate:self];
     [[self propertiesTableView] setDataSource:self];
     [[self view] addSubview:[self propertiesTableView]];
+    
+    [self setTokenView:[[SPTokenView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 40)]];
+    [[self view] addSubview:[self tokenView]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [(SPNavigationController*)[self navigationController] showActivityIndicator];
+
     [[SPSkinService sharedInstance] get:[self url] succeeded:^(SPSkin *skin) {
         [self setCurrentSkin:skin];
         [self updateInformation];
         [self setSkinEnrichmentViewController:[[SPSkinEnrichmentViewController alloc] initWithSkin:skin]];
+        [(SPNavigationController*)[self navigationController] hideActivityIndicator];
     } failed:^(NSError *error) {
         NSLog(@"Fail to get skin :(");
     }];
@@ -75,7 +83,7 @@
 
 - (void)updateInformation
 {
-    [[self tokenTextField] setText:[[self currentSkin] token]];
+    [[self tokenView] setText:[[self currentSkin] token]];
     [[self propertiesTableView] reloadData];
 }
 

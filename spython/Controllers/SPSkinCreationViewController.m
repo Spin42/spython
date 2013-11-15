@@ -23,7 +23,7 @@
 
 @synthesize skinsTableView;
 @synthesize skins;
-@synthesize skinScanViewController;
+@synthesize skinShootViewController;
 
 - (id)init
 {
@@ -46,14 +46,20 @@
         [[self skinsTableView] setDataSource:self];
         [[self view] addSubview:[self skinsTableView]];
         
-        [self setSkinScanViewController:[[SPSkinShootViewController alloc] init]];
-        [[self skinScanViewController] setDelegate:self];
+        [self setSkinShootViewController:[[SPSkinShootViewController alloc] init]];
+        [[self skinShootViewController] setDelegate:self];
         
         [self setLocationManager:[[CLLocationManager alloc] init]];
         [[self locationManager] setDelegate:self];
         [[self locationManager] setDesiredAccuracy:kCLLocationAccuracyBest];
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[self view] setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,7 +95,7 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil] show];
     } else
-        [self presentViewController:[self skinScanViewController] animated:YES completion:nil];
+        [self presentViewController:[self skinShootViewController] animated:YES completion:nil];
 }
 
 - (void)loadSkins
@@ -113,7 +119,7 @@
 - (void)addSkinForPicture:(UIImage*)picture
 {
     NSMutableArray *properties = [[NSMutableArray alloc] init];
-    [properties addObject:[[[SPImageProperty alloc] initWithKey:@"image" image:picture] toDictionary]];
+    [properties addObject:[[[SPImageProperty alloc] initWithKey:@"picture" image:picture] toDictionary]];
     [properties addObject:[[[SPLocationProperty alloc] initWithKey:@"location" location:[[self locationManager] location]] toDictionary]];
     
     [[SPSkinService sharedInstance] create:properties succeeded:^(NSDictionary *resource) {
@@ -167,7 +173,7 @@
 {
     [(SPNavigationController*)[self navigationController] showActivityIndicator];
 
-    [[self skinScanViewController] dismissViewControllerAnimated:YES completion:^{
+    [[self skinShootViewController] dismissViewControllerAnimated:YES completion:^{
         [self addSkinForPicture:(UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]];
     }];
 }
@@ -175,6 +181,7 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [(SPNavigationController*)[self navigationController] hideActivityIndicator];
+    [[self skinShootViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)reloadTableView

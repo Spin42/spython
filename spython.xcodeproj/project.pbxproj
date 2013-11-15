@@ -26,6 +26,16 @@
 		DB3584771835597400126E25 /* SPTextPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3584761835597400126E25 /* SPTextPropertyCell.m */; };
 		DB35847A18355C7D00126E25 /* SPPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB35847918355C7D00126E25 /* SPPropertyCell.m */; };
 		DB35847D1835654E00126E25 /* SPAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB35847C1835654E00126E25 /* SPAnnotation.m */; };
+		DB3584831835842000126E25 /* SPTokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3584821835842000126E25 /* SPTokenView.m */; };
+		DB3584851835857C00126E25 /* topBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3584841835857C00126E25 /* topBarBackground@2x.png */; };
+		DB358488183594A200126E25 /* SPRemoteImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB358487183594A200126E25 /* SPRemoteImageView.m */; };
+		DB35848B1835991200126E25 /* SPSkinScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB35848A1835991200126E25 /* SPSkinScanViewController.m */; };
+		DB35848D1835A2C600126E25 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB35848C1835A2C600126E25 /* logo@2x.png */; };
+		DB3584931835A9DB00126E25 /* icon@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3584901835A9DB00126E25 /* icon@2x-1.png */; };
+		DB3584941835A9DB00126E25 /* icon@2x-2.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3584911835A9DB00126E25 /* icon@2x-2.png */; };
+		DB3584951835A9DB00126E25 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3584921835A9DB00126E25 /* icon@2x.png */; };
+		DB3584981835AA7100126E25 /* addSkinButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3584961835AA7100126E25 /* addSkinButton@2x.png */; };
+		DB3584991835AA7100126E25 /* scanSkinButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3584971835AA7100126E25 /* scanSkinButton@2x.png */; };
 		DB7946E81832D58E000C81F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946E71832D58E000C81F2 /* Foundation.framework */; };
 		DB7946EA1832D58E000C81F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946E91832D58E000C81F2 /* CoreGraphics.framework */; };
 		DB7946EC1832D58E000C81F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7946EB1832D58E000C81F2 /* UIKit.framework */; };
@@ -93,6 +103,19 @@
 		DB35847918355C7D00126E25 /* SPPropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPropertyCell.m; sourceTree = "<group>"; };
 		DB35847B1835654E00126E25 /* SPAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAnnotation.h; sourceTree = "<group>"; };
 		DB35847C1835654E00126E25 /* SPAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAnnotation.m; sourceTree = "<group>"; };
+		DB3584811835842000126E25 /* SPTokenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTokenView.h; sourceTree = "<group>"; };
+		DB3584821835842000126E25 /* SPTokenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTokenView.m; sourceTree = "<group>"; };
+		DB3584841835857C00126E25 /* topBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topBarBackground@2x.png"; sourceTree = "<group>"; };
+		DB358486183594A200126E25 /* SPRemoteImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPRemoteImageView.h; sourceTree = "<group>"; };
+		DB358487183594A200126E25 /* SPRemoteImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPRemoteImageView.m; sourceTree = "<group>"; };
+		DB3584891835991200126E25 /* SPSkinScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSkinScanViewController.h; sourceTree = "<group>"; };
+		DB35848A1835991200126E25 /* SPSkinScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSkinScanViewController.m; sourceTree = "<group>"; };
+		DB35848C1835A2C600126E25 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		DB3584901835A9DB00126E25 /* icon@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x-1.png"; sourceTree = "<group>"; };
+		DB3584911835A9DB00126E25 /* icon@2x-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x-2.png"; sourceTree = "<group>"; };
+		DB3584921835A9DB00126E25 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		DB3584961835AA7100126E25 /* addSkinButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addSkinButton@2x.png"; sourceTree = "<group>"; };
+		DB3584971835AA7100126E25 /* scanSkinButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scanSkinButton@2x.png"; sourceTree = "<group>"; };
 		DB7946E41832D58E000C81F2 /* spython.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spython.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7946E71832D58E000C81F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB7946E91832D58E000C81F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -196,6 +219,13 @@
 		DB7946EE1832D58E000C81F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB3584901835A9DB00126E25 /* icon@2x-1.png */,
+				DB3584911835A9DB00126E25 /* icon@2x-2.png */,
+				DB3584921835A9DB00126E25 /* icon@2x.png */,
+				DB3584961835AA7100126E25 /* addSkinButton@2x.png */,
+				DB3584971835AA7100126E25 /* scanSkinButton@2x.png */,
+				DB35848C1835A2C600126E25 /* logo@2x.png */,
+				DB3584841835857C00126E25 /* topBarBackground@2x.png */,
 				DB7946EF1832D58E000C81F2 /* spython-Info.plist */,
 				DB7946F01832D58E000C81F2 /* InfoPlist.strings */,
 				DB7946F31832D58E000C81F2 /* main.m */,
@@ -239,6 +269,8 @@
 				DB026F6B1833F3C10091A12F /* SPSkinShootViewController.m */,
 				DB026F76183403490091A12F /* SPSkinValidationViewController.h */,
 				DB026F77183403490091A12F /* SPSkinValidationViewController.m */,
+				DB3584891835991200126E25 /* SPSkinScanViewController.h */,
+				DB35848A1835991200126E25 /* SPSkinScanViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -288,6 +320,10 @@
 				DB3584761835597400126E25 /* SPTextPropertyCell.m */,
 				DB35847818355C7D00126E25 /* SPPropertyCell.h */,
 				DB35847918355C7D00126E25 /* SPPropertyCell.m */,
+				DB3584811835842000126E25 /* SPTokenView.h */,
+				DB3584821835842000126E25 /* SPTokenView.m */,
+				DB358486183594A200126E25 /* SPRemoteImageView.h */,
+				DB358487183594A200126E25 /* SPRemoteImageView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,7 +407,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3584951835A9DB00126E25 /* icon@2x.png in Resources */,
 				DB7947001832D58E000C81F2 /* Images.xcassets in Resources */,
+				DB35848D1835A2C600126E25 /* logo@2x.png in Resources */,
+				DB3584981835AA7100126E25 /* addSkinButton@2x.png in Resources */,
+				DB3584941835A9DB00126E25 /* icon@2x-2.png in Resources */,
+				DB3584851835857C00126E25 /* topBarBackground@2x.png in Resources */,
+				DB3584931835A9DB00126E25 /* icon@2x-1.png in Resources */,
+				DB3584991835AA7100126E25 /* scanSkinButton@2x.png in Resources */,
 				DB7946F21832D58E000C81F2 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,11 +479,14 @@
 				DB1F5E1E1832DEEC006AACE8 /* SPSkinInformationViewController.m in Sources */,
 				DB026F84183433C60091A12F /* SPLocationProperty.m in Sources */,
 				DB7946F41832D58E000C81F2 /* main.m in Sources */,
+				DB3584831835842000126E25 /* SPTokenView.m in Sources */,
 				DB026F81183432A90091A12F /* SPImageProperty.m in Sources */,
 				DB026F78183403490091A12F /* SPSkinValidationViewController.m in Sources */,
+				DB358488183594A200126E25 /* SPRemoteImageView.m in Sources */,
 				DB3584741835596D00126E25 /* SPNumberPropertyCell.m in Sources */,
 				DB026F6C1833F3C10091A12F /* SPSkinShootViewController.m in Sources */,
 				DB026F751833FF220091A12F /* SPSkinService.m in Sources */,
+				DB35848B1835991200126E25 /* SPSkinScanViewController.m in Sources */,
 				DB7946FE1832D58E000C81F2 /* SPViewController.m in Sources */,
 				DB7947261832DC02000C81F2 /* SPNavigationController.m in Sources */,
 				DB7946F81832D58E000C81F2 /* SPAppDelegate.m in Sources */,

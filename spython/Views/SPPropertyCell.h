@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPRemoteImageView.h"
 
 @interface SPPropertyCell : UITableViewCell
 
 @property (strong, nonatomic) UILabel *dateLabel;
 @property (strong, nonatomic) UILabel *keyLabel;
 @property (strong, nonatomic) UIView *previewView;
+@property (strong, nonatomic) UIImageView *logoImageView;
+
+- (void)setFormattedDate:(NSDate*)date;
+- (void)setKey:(NSString*)key;
+- (void)setLogo:(NSString*)url;
 
 @end

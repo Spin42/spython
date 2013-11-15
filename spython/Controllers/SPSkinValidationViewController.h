@@ -7,14 +7,15 @@
 //
 
 #import "SPSkin.h"
+#import "SPTokenView.h"
 #import <UIKit/UIKit.h>
 
 @interface SPSkinValidationViewController : UIViewController
 
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) SPSkin *currentSkin;
-@property (strong, nonatomic) UIImageView *skinImageView;
-@property (strong, nonatomic) UILabel *skinTokenLabel;
+@property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) SPTokenView *tokenView;
 
 - (id)initWithUrl:(NSString*)url;
 

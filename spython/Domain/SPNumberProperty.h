@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) NSNumber *decodedValue;
 
+- (id)initWithKey:(NSString*)_key number:(NSNumber*)_value;
+
 @end

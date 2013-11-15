@@ -14,8 +14,9 @@
 {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"imageCellIdentifier"];
     if (self) {
-        [[self dateLabel] setText:[[imageProperty date] description]];
-        [[self keyLabel] setText:[imageProperty key]];
+        [self setFormattedDate:[imageProperty date]];
+        [self setKey:[imageProperty key]];
+        [self setLogo:[imageProperty logoUrl]];
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [[self previewView] frame].size.width, [[self previewView] frame].size.height)];
         [imageView setContentMode:UIViewContentModeScaleAspectFill];

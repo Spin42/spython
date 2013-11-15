@@ -14,6 +14,8 @@
 @property (strong, nonatomic) NSString *value;
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSDate *date;
+@property (strong, nonatomic) NSString *unit;
+@property (strong, nonatomic) NSString *logoUrl;
 
 -(NSDictionary*)toDictionary;
 - (id)initWithDictionary:(NSDictionary*)dictionary;

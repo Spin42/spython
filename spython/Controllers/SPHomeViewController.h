@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SPSkinCreationViewController.h"
-#import "SPSkinEnrichmentViewController.h"
+#import "SPSkinScanViewController.h"
 #import "SPSkinInformationViewController.h"
 
 @interface SPHomeViewController : UIViewController
@@ -17,6 +17,6 @@
 @property (strong, nonatomic) UIButton *skinEnrichmentButton;
 @property (strong, nonatomic) UIButton *skinInformationButton;
 @property (strong, nonatomic) SPSkinCreationViewController *skinCreationViewController;
-@property (strong, nonatomic) SPSkinEnrichmentViewController *skinEnrichmentViewController;
+@property (strong, nonatomic) SPSkinScanViewController *skinScanViewController;
 
 @end

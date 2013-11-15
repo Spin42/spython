@@ -17,8 +17,8 @@
 @implementation SPSkinValidationViewController
 
 @synthesize currentSkin;
-@synthesize skinImageView;
-@synthesize skinTokenLabel;
+@synthesize imageView;
+@synthesize tokenView;
 
 - (id)initWithUrl:(NSString*)url;
 {
@@ -36,15 +36,12 @@
     CGRect frame = [[self view] frame];
     [[self view] setBackgroundColor:[UIColor whiteColor]];
     
-    CGRect skinImageViewFrame = CGRectMake(0, 0, frame.size.width, frame.size.width);
-    [self setSkinImageView:[[UIImageView alloc] initWithFrame:skinImageViewFrame]];
-    [[self view] addSubview:[self skinImageView]];
+    CGRect skinImageViewFrame = frame;
+    [self setImageView:[[UIImageView alloc] initWithFrame:skinImageViewFrame]];
+    [[self view] addSubview:[self imageView]];
     
-    CGRect skinTokenLabelFrame = CGRectMake(0, frame.size.width, frame.size.width, frame.size.height - frame.size.width);
-    [self setSkinTokenLabel:[[UILabel alloc] initWithFrame:skinTokenLabelFrame]];
-    [[self skinTokenLabel] setTextAlignment:NSTextAlignmentCenter];
-    [[self skinTokenLabel] setTextColor:[UIColor grayColor]];
-    [[self view] addSubview:[self skinTokenLabel]];
+    [self setTokenView:[[SPTokenView alloc] initWithFrame:CGRectMake(0, frame.size.height - 200, frame.size.width, 40)]];
+    [[self view] addSubview:[self tokenView]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -60,9 +57,9 @@
 
 - (void)updateInformation
 {
-    [[self skinTokenLabel] setText:[[self currentSkin] token]];
+    [[self tokenView] setText:[[self currentSkin] token]];
     SPImageProperty *firstImageProperty = [[self currentSkin] firstImageProperty];
-    [[self skinImageView] setImage:[firstImageProperty decodedValue]];
+    [[self imageView] setImage:[firstImageProperty decodedValue]];
 }
 
 

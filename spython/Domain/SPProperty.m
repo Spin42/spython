@@ -13,6 +13,8 @@
 @synthesize key;
 @synthesize value;
 @synthesize type;
+@synthesize unit;
+@synthesize logoUrl;
 
 -(NSDictionary*)toDictionary
 {
@@ -20,6 +22,7 @@
             [self key], @"key",
             [self type], @"type",
             [self value], @"value",
+            [self unit], @"unit",
             nil];
 }
 
@@ -27,6 +30,8 @@
 {
     self = [self init];
     if (self) {
+        [self setUnit:[dictionary objectForKey:@"unit"]];
+        [self setLogoUrl:[dictionary objectForKey:@"logo_url"]];
         [self setDate:[NSDate dateWithTimeIntervalSince1970:[[dictionary objectForKey:@"timestamp"] doubleValue]]];
     }
     return self;
